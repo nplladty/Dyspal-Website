@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dyspal</title>
+  <meta name="description" content="">
+  <link rel="icon" href="./assets/Dyspal v2 Logo.png" type="image/png">
+  <script>
+    // Signature Loading: sembunyikan Hero sebelum paint pertama (anti white-flash / double fade-in).
+    // Hanya pada kunjungan pertama per sesi, tanpa reduced-motion, tanpa deep-link anchor.
+    (function () {
+      try {
+        var deep = location.hash && location.hash !== '#top';
+        var seen = sessionStorage.getItem('dyspal-intro-seen') === '1';
+        var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (deep || seen || rm) return;
+        var h = document.documentElement;
+        h.classList.add('intro-on');
+        // Safety: jika JS modul gagal dimuat, website tetap tampil.
+        setTimeout(function () { h.classList.remove('intro-on'); }, 4000);
+      } catch (e) { /* abaikan */ }
+    })();
+  </script>
+  <script type="module" crossorigin src="./assets/index-UWG1ydVb.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/id-oXL_mP9E.js">
+  <link rel="stylesheet" crossorigin href="./assets/id-CGph6nHz.css">
+  <link rel="stylesheet" crossorigin href="./assets/index-MA2Hdbw7.css">
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>

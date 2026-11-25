@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "appName": "Dyspal",
+  "latestVersion": "2.0.0",
+  "channel": "stable",
+  "downloadUrl": "https://github.com/nplladty/Dyspal/releases/download/v2.0.0/Dyspal.V2.exe",
+  "releaseDate": "2026-11-24",
+  "mandatoryUpdate": false,
+  "package": {
+    "type": "exe",
+    "sizeBytes": 325120,
+    "sha256": "795bdbf2d148e9cfc0ac78f916380886e01490cbaa805af0718bb84db449edd7",
+    "directDownloadUrl": "https://github.com/nplladty/Dyspal/releases/download/v2.0.0/Dyspal.V2.exe"
+  },
+  "releaseNotes": {
+    "en": [
+      "First official release of Dyspal."
+    ],
+    "id": [
+      "Rilis resmi pertama Dyspal."
+    ]
+  }
+}
