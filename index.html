@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <title>Dyspal untuk Windows | Kapsul desktop interaktif</title>
+  <meta name="description" content="Kontrol media, ikuti lirik tersinkron, periksa agenda, dan pantau PC dari kapsul Dyspal. Coba simulasi desktop interaktifnya.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dyspal">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="Dyspal untuk Windows | Kapsul desktop interaktif">
+  <meta property="og:description" content="Kontrol media, ikuti lirik tersinkron, periksa agenda, dan pantau PC dari kapsul Dyspal. Coba simulasi desktop interaktifnya.">
+  <meta property="og:image" content="./assets/Dyspal%20v2%20Logo%20Border.png">
+  <meta property="og:image:alt" content="Dyspal">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dyspal untuk Windows | Kapsul desktop interaktif">
+  <meta name="twitter:description" content="Kontrol media, ikuti lirik tersinkron, periksa agenda, dan pantau PC dari kapsul Dyspal. Coba simulasi desktop interaktifnya.">
+  <meta name="twitter:image" content="./assets/Dyspal%20v2%20Logo%20Border.png">
+  <meta name="twitter:image:alt" content="Dyspal">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Dyspal","operatingSystem":"Windows","applicationCategory":"UtilitiesApplication","softwareVersion":"2.0.0","downloadUrl":"https://github.com/nplladty/Dyspal/releases/download/v2.0.0/Dyspal.V2.exe","description":"Kontrol media, ikuti lirik tersinkron, periksa agenda, dan pantau PC dari kapsul Dyspal. Coba simulasi desktop interaktifnya."}</script>
+
+  <link rel="preload" href="./assets/sora-bold-CHn4oUc-.woff2" as="font" type="font/woff2" crossorigin>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dyspal</title>
-  <meta name="description" content="">
-  <link rel="icon" href="./assets/Dyspal v2 Logo.png" type="image/png">
+  
+  
+  <link rel="icon" href="./assets/dyspal-icon-64.png" type="image/png">
   <script>
-    // Signature Loading: sembunyikan Hero sebelum paint pertama (anti white-flash / double fade-in).
-    // Hanya pada kunjungan pertama per sesi, tanpa reduced-motion, tanpa deep-link anchor.
     (function () {
       try {
-        var deep = location.hash && location.hash !== '#top';
         var seen = sessionStorage.getItem('dyspal-intro-seen') === '1';
-        var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (deep || seen || rm) return;
-        var h = document.documentElement;
-        h.classList.add('intro-on');
-        // Safety: jika JS modul gagal dimuat, website tetap tampil.
-        setTimeout(function () { h.classList.remove('intro-on'); }, 4000);
-      } catch (e) { /* abaikan */ }
+        var deep = location.hash && location.hash !== '#top';
+        if (seen || deep || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        document.documentElement.classList.add('di-on');
+        for (var part of ['pill', 'capsule', 'outer', 'glow']) {
+          var link = document.createElement('link');
+          link.rel = 'preload';
+          link.as = 'image';
+          link.href = './assets/dyspal-logo-' + part + '.webp';
+          document.head.appendChild(link);
+        }
+      } catch (e) { /* Storage unavailable: show the homepage directly. */ }
     })();
   </script>
-  <script type="module" crossorigin src="./assets/index-UWG1ydVb.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/id-oXL_mP9E.js">
+  <script type="module" crossorigin src="./assets/index-D_eapUjN.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/id-B5PYA31M.js">
+  <link rel="modulepreload" crossorigin href="./assets/release-BNxsn-W9.js">
   <link rel="stylesheet" crossorigin href="./assets/id-CGph6nHz.css">
-  <link rel="stylesheet" crossorigin href="./assets/index-MA2Hdbw7.css">
+  <link rel="stylesheet" crossorigin href="./assets/release-BW0yrKrU.css">
+  <link rel="stylesheet" crossorigin href="./assets/index-H-V07wEH.css">
 </head>
 <body>
+  <template id="intro-template">
+    <div id="dyspal-intro" aria-hidden="true"><div class="di-logo"><img class="di-glow" src="./assets/dyspal-logo-glow.webp" alt=""><img class="di-outer" src="./assets/dyspal-logo-outer.webp" alt=""><img class="di-energy" src="./assets/dyspal-logo-outer.webp" alt=""><img class="di-capsule" src="./assets/dyspal-logo-capsule.webp" alt=""><i class="di-halo"></i><img class="di-pill" src="./assets/dyspal-logo-pill.webp" alt=""></div></div>
+  </template>
   <div id="app"></div>
-</body>
+<noscript><section aria-label="Dyspal untuk Windows | Kapsul desktop interaktif"><p><strong>Dyspal untuk Windows | Kapsul desktop interaktif</strong></p><p>Kontrol media, ikuti lirik tersinkron, periksa agenda, dan pantau PC dari kapsul Dyspal. Coba simulasi desktop interaktifnya.</p><nav aria-label="Halaman website"><a href="./">Dyspal untuk Windows | Kapsul desktop interaktif</a> · <a href="./download/">Unduh Dyspal untuk Windows</a> · <a href="./changelog/">Riwayat rilis Dyspal | Apa yang baru?</a> · <a href="./guide/">Panduan pengguna Dyspal | Mulai di Windows</a> · <a href="./privacy/">Kebijakan privasi website | Dyspal</a></nav></section></noscript></body>
 </html>

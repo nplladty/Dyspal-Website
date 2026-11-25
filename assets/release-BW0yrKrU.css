@@ -1,0 +1,1 @@
+[data-motion-paused],[data-motion-paused]:before,[data-motion-paused]:after,.stg[data-motion-paused] *,.stg[data-motion-paused] :before,.stg[data-motion-paused] :after,.gx-sky-paused :is(.hero h1 em,.dl-intro h1 em),.gx-sky-paused :is(.sup,.dl-release):after,.gx-sky-paused .latest:before{animation-play-state:paused!important}
